@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Scaletor</string>
+    <string name="Prueba">Este es un string de prueba</string>
+    <string name="option1">Escala Mayor</string>
+    <string name="option2">Escala Menor Melódica</string>
+
+</resources>
