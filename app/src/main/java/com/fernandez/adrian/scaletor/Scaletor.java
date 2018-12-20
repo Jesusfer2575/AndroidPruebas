@@ -4,25 +4,30 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
-public class Scaletor extends AppCompatActivity {
+public class Scaletor extends AppCompatActivity implements View.OnClickListener {
 
     // Used to load the 'native-lib' library on application startup.
     static {
         System.loadLibrary("native-lib");
     }
     private TextView tv_result;
-
+    private Button bt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scaletor);
 
         // Example of a call to a native method
-        TextView tv = (TextView) findViewById(R.id.sample_text);
+        //TextView tv = (TextView) findViewById(R.id.sample_text);
         this.tv_result = (TextView) findViewById(R.id.Text_result);
-        tv.setText(stringFromJNI());
+        //tv.setText(stringFromJNI());
+        this.tv_result.setText("Seleccione una opción");
+        this.bt = (Button) findViewById(R.id.button);
+
     }
 
     @Override
@@ -50,4 +55,13 @@ public class Scaletor extends AppCompatActivity {
      * which is packaged with this application.
      */
     public native String stringFromJNI();
+
+    @Override
+    public void onClick(View v) {
+        //El switch se utiliza para diferencias un botón de otro en casa de que existiera más de uno en el layout
+        switch(v.getId()){
+            case R.id.button:
+                break;
+        }
+    }
 }
